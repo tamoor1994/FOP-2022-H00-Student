@@ -34,6 +34,24 @@ public class Exercise {
    */
   public static void doExercise(final boolean shouldPutCoin) {
     Robot r = new Robot(4, 4, UP, 1);
-    // TODO H00 Implement your solution here:
+    r.turnLeft();
+    for (int i = 0; i < 4; i++) {
+      r.move();
+      r.turnLeft();
+      r.move();
+      turnRight(r);
+    }
+    turnRight(r);
+    if (shouldPutCoin)
+      r.putCoin();
+  }
+
+  /**
+   * To turn the Robot to the right site
+   * @param robot
+   */
+  public static void turnRight (Robot robot) {
+    for (int i = 0; i < 3; i++)
+      robot.turnLeft();
   }
 }
